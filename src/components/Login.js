@@ -22,3 +22,19 @@ export default function Login() {
         navigate("/");
       });
   }
+  return (
+    <form onSubmit={handleLogin}>
+      <input
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <input
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <button>Login</button>
+    </form>
+  );
+}
