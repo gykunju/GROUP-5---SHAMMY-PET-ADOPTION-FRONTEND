@@ -44,7 +44,6 @@ function Pet() {
   const [pets, setPets] = useState([]);
 
   useEffect(() => {
-    // Fetch data from your backend API
     fetch('YOUR_BACKEND_API_ENDPOINT_HERE') // Replace with your backend API endpoint
       .then((response) => response.json())
       .then((data) => setPets(data))
