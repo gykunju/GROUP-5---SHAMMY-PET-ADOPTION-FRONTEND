@@ -20,12 +20,10 @@
 
 
   
-/* Add styling for the entire Pet component */
 .pet-container {
   text-align: center;
 }
 
-/* Style the h1 element */
 .pet-title {
   font-size: 24px;
   margin-bottom: 20px;
