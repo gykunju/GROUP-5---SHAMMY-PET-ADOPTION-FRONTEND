@@ -14,4 +14,10 @@ export default function App() {
             <>
               <button>edit</button>
               <button>delete</button>
+              </>
+          )}
+        </div>
+      ))}
     </>
+  );
+}
