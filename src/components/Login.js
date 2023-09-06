@@ -8,3 +8,11 @@ export default function Login() {
     const [password, setPassword] = useState("");
     const { login } = useLogin();
     const navigate = useNavigate();
+    
+    function handleLogin(e) {
+        e.preventDefault();
+        fetch("http://127.0.0.1:3000/login", {
+          method: "POST",
+          body: JSON.stringify({ email, password }),
+          headers: { "Content-Type": "application/json" }
+        })
