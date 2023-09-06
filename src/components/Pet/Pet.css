@@ -31,7 +31,6 @@
   margin-bottom: 20px;
 }
 
-/* Style individual pet cards */
 .pet-card {
   margin: 10px;
   padding: 10px;
@@ -40,7 +39,6 @@
   background-color: #fff;
 }
 
-/* Style the pet image */
 .pet-image {
   max-width: 100%;
   height: auto;
