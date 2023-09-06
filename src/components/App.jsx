@@ -7,4 +7,7 @@ export default function App() {
   return (
     <>
     {loggedInUser.admin && <button>Create Pet</button>}
+    {PETS.map((pet) => (
+        <div key={pet.name}>
+          <p>{pet.name}</p>
     </>
