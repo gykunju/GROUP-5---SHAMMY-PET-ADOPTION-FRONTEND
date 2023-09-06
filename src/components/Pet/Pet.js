@@ -32,6 +32,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Card, Image } from 'semantic-ui-react';
+import './Pet.css'
 
 function Pet() {
   const [pets, setPets] = useState([]);
