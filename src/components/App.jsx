@@ -10,4 +10,8 @@ export default function App() {
     {PETS.map((pet) => (
         <div key={pet.name}>
           <p>{pet.name}</p>
+          {loggedInUser.admin && (
+            <>
+              <button>edit</button>
+              <button>delete</button>
     </>
