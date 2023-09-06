@@ -44,7 +44,7 @@ function Pet() {
   const [pets, setPets] = useState([]);
 
   useEffect(() => {
-    fetch('localhost:localhost:3000/pets3000/pets') 
+    fetch('http://127.0.0.1:3000/pets') 
       .then((response) => response.json())
       .then((data) => setPets(data))
       .catch((error) => console.error('Error fetching pets:', error));
