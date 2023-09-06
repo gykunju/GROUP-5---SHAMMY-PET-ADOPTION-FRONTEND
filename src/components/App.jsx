@@ -7,6 +7,19 @@ export default function App() {
     const [pets, setPets] = useState([]);
     const { loggedInUser } = useLogin();
 
+    useEffect(() => {
+        // Make an HTTP GET request to fetch pets from the backend
+        axios.get('/backend-pets-url')
+          .then(response => {
+            setPets(response.data); // Assuming the response contains an array of pets
+          })
+          .catch(error => {
+            console.error('Error fetching pets:', error);
+          });
+      }, []); // Empty dependency array- effect runs once when the component mounts
+    
+
+    return (
     <>
     {loggedInUser.admin && <button>Create Pet</button>}
     {pets.map((pet) => (
