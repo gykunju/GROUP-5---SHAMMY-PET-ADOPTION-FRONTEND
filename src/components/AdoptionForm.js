@@ -5,21 +5,22 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom'
 function AdoptionForm() {
   
   const [location, setLocation] =useState(null)
-  const [number, setNumber] =useState(null)
+  const [contact, setContact] =useState(null)
   const [reason, setReason] =useState(null)
-  const { id } = useParams()
+  // const { id } = useParams()
   const history = useHistory()
 
   function handleSubmit(e){
     e.preventDefault()
     const details = {
        location,
-       contact: number,
+       contact,
        reason,
-       pet_id: id,
+       pet_id: 2,
+       user_id: 2
     }
 
-    fetch("http://localhost:3000/adopteds",{
+    fetch("http://localhost:3000/adoptions",{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -35,13 +36,13 @@ function AdoptionForm() {
       <h2>Adopt THEM</h2>
       <form onSubmit={handleSubmit} className='adopt-form'>
         <label>Location :
-          <input placeholder='location' value={location} onChange={(e)=>setLocation(e.value)}/>
+          <input placeholder='location' value={location} onChange={(e)=>setLocation(e.target.value)}/>
         </label>
         <label>Number :
-          <input placeholder='number' value={number} onChange={(e)=>setNumber(e.value)}/>
+          <input placeholder='contact' value={contact} onChange={(e)=>setContact(e.target.value)}/>
         </label>
         <label>Reason : 
-          <input placeholder='reason' value={reason} onChange={(e)=>setReason(e.value)}/>
+          <input placeholder='reason' value={reason} onChange={(e)=>setReason(e.target.value)}/>
         </label>
         <button type='submit'>ADOPT</button>
       </form>
