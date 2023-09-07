@@ -56,11 +56,11 @@ function Pet() {
       <Card.Group>
         {pets.map((pet) => (
           <Card key={pet.id} className="pet-card">
-            <Image src={pet.image_url} alt={pet.name} className="pet-image" />
+            <Image src={pet.image} alt={pet.name} className="pet-image" />
             <Card.Content>
               <Card.Header>{pet.name}</Card.Header>
               <Card.Meta>Age: {pet.age}</Card.Meta>
-              <Card.Description className="pet-details">About: {pet.about}</Card.Description>
+              <Card.Description className="pet-details">Description: {pet.description}</Card.Description>
             </Card.Content>
           </Card>
         ))}
