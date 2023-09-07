@@ -1,0 +1,47 @@
+/* .pet-card {
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin: 16px;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pet-card img {
+    max-width: 100%;
+  }
+  
+  .pet-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  } */
+  
+
+
+
+  
+.pet-container {
+  text-align: center;
+}
+
+.pet-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.pet-card {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.pet-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.pet-details {
+  margin-top: 10px;
+}
