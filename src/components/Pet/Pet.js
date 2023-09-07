@@ -65,7 +65,7 @@ function Pet() {
   }
 
   function handlePets(){
-    navigate("/")
+    navigate("/adoptedpets")
   }
 
   return (

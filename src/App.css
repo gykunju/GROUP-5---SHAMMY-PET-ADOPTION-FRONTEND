@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+body{
+  background-color: #f8f7f7;
+}
+
 .adopt-div{
   margin-top: 20px;
   display: flex;
@@ -30,4 +34,46 @@
   background-color: burlywood;
   border: 0px;
   padding: 10px;
+}
+
+.form-div{
+  background-color: #f8f7f7;
+  margin-top: 20px;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 60px auto;
+  border: 1px solid;
+  height: 400px;
+  width: 400px;
+  border-radius: 20px;
+  background-color: chocolate;
+}
+
+.form input{
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.form button{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #f8f7f7;
+  border: 2px solid;
+  padding: 8px;
+  width: 90px;
+  transition: transform 0.2s;
+}
+
+.form button:hover{
+  transform: translateY(-2px);
+  box-shadow: 2px #f8f7f7;
+}
+
+.form button:active{
+  transform: translateX(2px) ;
 }
