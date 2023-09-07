@@ -14,12 +14,10 @@ const App = () => {
             <li>
               <Link to="/about">About</Link>
             </li>
-            {/* Add more navigation links */}
           </ul>
         </nav>
 
         <Switch>
-          {/* ...other routes */}
           <Route path="/about" component={About} />
         </Switch>
       </div>
