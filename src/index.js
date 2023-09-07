@@ -3,10 +3,10 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import App from "./App";
-import Login from "./Login";
+import App from "./components/App";
+import Login from "./components/Login.js";
 
-import { UserProvider } from "./UserContext";
+import { UserProvider } from "./components/UserContext.js";
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);

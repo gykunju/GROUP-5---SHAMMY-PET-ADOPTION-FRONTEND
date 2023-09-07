@@ -1,4 +1,4 @@
-import "./styles.css";
+
 import { useLogin } from "./UserContext";
 import React, { useEffect, useState } from 'react';
 
@@ -9,9 +9,10 @@ export default function App() {
 
     useEffect(() => {
         // Make an HTTP GET request to fetch pets from the backend
-        axios.get('/backend-pets-url')
+        fetch('/backend-pets-url').then(res => res.json())
           .then(response => {
-            setPets(response.data); // Assuming the response contains an array of pets
+             setPets(response.data); 
+            // console.log(response) // Assuming the response contains an array of pets
           })
           .catch(error => {
             console.error('Error fetching pets:', error);
