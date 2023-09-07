@@ -10,6 +10,25 @@ function AdoptionForm() {
   const { id } = useParams()
   const history = useHistory()
 
+  function handleSubmit(e){
+    e.preventDefault()
+    const details = {
+       location,
+       contact: number,
+       reason,
+       pet_id: id,
+    }
+
+    fetch("http://localhost:3000/adopteds",{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(details)
+    })
+
+    history.push('/pets')
+  }
 
   return (
     <div className='adopt-div'>
