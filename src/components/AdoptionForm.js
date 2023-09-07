@@ -7,7 +7,7 @@ function AdoptionForm() {
   const [location, setLocation] =useState(null)
   const [contact, setContact] =useState(null)
   const [reason, setReason] =useState(null)
-  // const { id } = useParams()
+   const { id } = useParams()
   const navigate = useNavigate()
 
   function handleSubmit(e){
@@ -16,8 +16,7 @@ function AdoptionForm() {
        location,
        contact,
        reason,
-       pet_id: 2,
-       user_id: 2
+       pet_id: id,
     }
 
     fetch("http://localhost:3000/adoptions",{

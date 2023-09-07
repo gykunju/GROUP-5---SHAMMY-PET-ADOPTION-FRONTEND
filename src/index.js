@@ -14,6 +14,8 @@ import Login from "./components/Login.js";
 
 import { UserProvider } from "./components/UserContext.js";
 import Pet from './components/Pet/Pet';
+import PetCard from './components/Pet/PetCard';
+import AdoptionForm from './components/AdoptionForm';
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
@@ -25,6 +27,8 @@ root.render(
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/pets" element={<Pet />} />
+          <Route path="/pets/:id" element={<PetCard />} />
+          <Route path="/pets/:id/adoption" element={<AdoptionForm />} />
         </Routes>
       </BrowserRouter>
     </UserProvider>
