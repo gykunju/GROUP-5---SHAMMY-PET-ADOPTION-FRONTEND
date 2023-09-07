@@ -30,6 +30,7 @@ import Pet from './components/Pet/Pet'
 function App() {
   return (
     <div className="App">
+      <h1>hello</h1>
       <Pet />
     </div>
   );

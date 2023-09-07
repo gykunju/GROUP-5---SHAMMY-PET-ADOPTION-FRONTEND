@@ -13,6 +13,7 @@ import App from "./components/App";
 import Login from "./components/Login.js";
 
 import { UserProvider } from "./components/UserContext.js";
+import Pet from './components/Pet/Pet';
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
@@ -22,8 +23,8 @@ root.render(
     <UserProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/pets" element={<Pet />} />
         </Routes>
       </BrowserRouter>
     </UserProvider>

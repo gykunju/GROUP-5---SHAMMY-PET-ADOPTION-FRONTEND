@@ -8,6 +8,7 @@ export default function Login() {
     const [password, setPassword] = useState("");
     const { login } = useLogin();
     const navigate = useNavigate();
+    const [state, setState] = useState("wrong")
 
     function handleLogin(e) {
         e.preventDefault();
@@ -16,10 +17,19 @@ export default function Login() {
           body: JSON.stringify({ email, password }),
           headers: { "Content-Type": "application/json" }
         })
-        .then((res) => res.json())
+        .then((res) => {if (res.ok){
+          setState("correct")
+          res.json()
+        }else{
+          alert("Wrong pasword or username")
+          navigate("/")
+        }
+      })
       .then((data) => {
+        if (state === "correct"){
         login(data);
-        navigate("/");
+        navigate("/pets");
+        }
       });
   }
   return (

@@ -39,20 +39,24 @@
 import React, { useState, useEffect } from 'react';
 import { Card, Image } from 'semantic-ui-react';
 import './Pet.css';
+import { useLogin } from "../UserContext";
 
 function Pet() {
   const [pets, setPets] = useState([]);
+  const { loggedInUser } = useLogin();
+
 
   useEffect(() => {
-    fetch('http://127.0.0.1:3000/pets') 
+    fetch('http://localhost:3000/pets') 
       .then((response) => response.json())
       .then((data) => setPets(data))
       .catch((error) => console.error('Error fetching pets:', error));
-  }, []);
+  });
 
   return (
     <div className="pet-container">
       <h1 className="pet-title">Pet List</h1>
+      {loggedInUser.admin && <button>Create Pet</button>}
       <Card.Group>
         {pets.map((pet) => (
           <Card key={pet.id} className="pet-card">
@@ -60,7 +64,13 @@ function Pet() {
             <Card.Content>
               <Card.Header>{pet.name}</Card.Header>
               <Card.Meta>Age: {pet.age}</Card.Meta>
-              <Card.Description className="pet-details">About: {pet.about}</Card.Description>
+              <Card.Description className="pet-details">About: {pet.description}</Card.Description>
+              {loggedInUser.admin && (
+            <>
+              <button>edit</button>
+              <button>delete</button>
+              </>
+          )}
             </Card.Content>
           </Card>
         ))}
