@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import { useParams } from 'react-router-dom'
-import { useHistory } from 'react-router-dom/cjs/react-router-dom'
+import { useNavigate } from "react-router-dom"
 
 function AdoptionForm() {
   
@@ -8,7 +8,7 @@ function AdoptionForm() {
   const [contact, setContact] =useState(null)
   const [reason, setReason] =useState(null)
   // const { id } = useParams()
-  const history = useHistory()
+  const navigate = useNavigate()
 
   function handleSubmit(e){
     e.preventDefault()
@@ -28,7 +28,7 @@ function AdoptionForm() {
       body: JSON.stringify(details)
     })
 
-    history.push('/pets')
+    navigate('/pets')
   }
 
   return (
