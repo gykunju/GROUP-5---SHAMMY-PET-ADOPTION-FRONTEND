@@ -46,6 +46,8 @@ import { useNavigate } from "react-router-dom";
 function Pet() {
   const [pets, setPets] = useState([]);
   const { loggedInUser } = useLogin();
+
+  
   const navigate = useNavigate();
   
   
@@ -61,7 +63,7 @@ function Pet() {
   }
 
   function handleCreate(){
-
+    navigate("/create")
   }
 
   function handlePets(){

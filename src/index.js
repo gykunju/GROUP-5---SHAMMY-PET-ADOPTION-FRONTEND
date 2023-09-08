@@ -1,9 +1,9 @@
 
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+// import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './App';
-import reportWebVitals from './reportWebVitals';
+// import reportWebVitals from './reportWebVitals';
 import 'semantic-ui-css/semantic.min.css';
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
@@ -30,6 +30,7 @@ root.render(
           <Route path="/pets" element={<Pet />} />
           <Route path="/pets/:id" element={<PetCard />} />
           <Route path="/pets/:id/adoption" element={<AdoptionForm />} />
+          <Route path="/adoptedpets" element={<AdoptedPets />} />
           <Route path="/adoptedpets" element={<AdoptedPets />} />
         </Routes>
       </BrowserRouter>
