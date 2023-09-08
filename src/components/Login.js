@@ -19,18 +19,14 @@ export default function Login() {
         })
         .then((res) => {if (res.ok){
           setState("correct")
+          navigate("/pets")
           res.json()
         }else{
           alert("Wrong pasword or username")
           navigate("/")
         }
       })
-      .then((data) => {
-        if (state === "correct"){
-        login(data);
-        navigate("/pets");
-        }
-      });
+      .then((data) =>  login(data));
   }
   return (
     <div className="form-div">
@@ -53,7 +49,7 @@ export default function Login() {
         onChange={(e) => setPassword(e.target.value)}
       />
       </label>
-      <button>Login</button>
+      <button type="submit" >Login</button>
     </form>
     </div>
   );

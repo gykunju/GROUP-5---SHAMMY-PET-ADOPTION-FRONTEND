@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom"
 
 function AdoptionForm() {
   
-  const [location, setLocation] =useState(null)
-  const [contact, setContact] =useState(null)
-  const [reason, setReason] =useState(null)
+  const [location, setLocation] =useState('')
+  const [contact, setContact] =useState('')
+  const [reason, setReason] =useState('')
    const { id } = useParams()
   const navigate = useNavigate()
 
@@ -18,7 +18,7 @@ function AdoptionForm() {
        reason,
        pet_id: id,
     }
-
+    if (location.length > 0 && contact.length > 0 && reason.length > 0 ){
     fetch("http://localhost:3000/adoptions",{
       method: 'POST',
       headers: {
@@ -26,8 +26,12 @@ function AdoptionForm() {
       },
       body: JSON.stringify(details)
     })
+  
 
     navigate('/pets')
+  }else{
+    alert("Fill the Form")
+  }
   }
 
   return (
