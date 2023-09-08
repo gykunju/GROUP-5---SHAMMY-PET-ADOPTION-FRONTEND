@@ -73,7 +73,7 @@ function Pet() {
   return (
     <div className="pet-container">
       <h1 className="pet-title">Pet List</h1>
-      <button onClick={handlePets}>ADOPTED PETS</button>
+      <button onClick={handlePets} className='pet-button'>ADOPTED PETS</button>
       {loggedInUser?.admin && <button onClick={handleCreate}>Create Pet</button>}
       <Card.Group>
         {pets.map((pet) => (         

@@ -17,6 +17,7 @@ import Pet from './components/Pet/Pet';
 import PetCard from './components/Pet/PetCard';
 import AdoptionForm from './components/AdoptionForm';
 import AdoptedPets from './components/AdoptedPets';
+import Navbar from './components/Navbar';
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
@@ -25,6 +26,7 @@ root.render(
   <StrictMode>
     <UserProvider>
       <BrowserRouter>
+          <Navbar/>
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/pets" element={<Pet />} />
