@@ -21,7 +21,7 @@ function PetCard() {
       <h2>{pet.name}</h2>
       <img src={pet.image} alt={pet.name} />
       <p>Age: {pet.age}</p>
-      <p>About: {pet.description}</p>
+      <p>{pet.description}</p>
       <button onClick={handleClick}>ADOPT</button>
     </div>
   );
