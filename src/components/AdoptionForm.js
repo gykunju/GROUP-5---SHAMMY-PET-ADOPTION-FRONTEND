@@ -36,7 +36,7 @@ function AdoptionForm() {
 
   return (
     <div className='form-div'>
-      <h2>Adopt THEM</h2>
+      <h2>Adopt</h2>
       <form onSubmit={handleSubmit} className='form'>
         <label>Location :
           <input placeholder='location' value={location} onChange={(e)=>setLocation(e.target.value)}/>
