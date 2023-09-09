@@ -1,10 +1,19 @@
 import React from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
 
     const location = useLocation()
     const currentPath = location.pathname
+    const navigate = useNavigate()
+
+    function handleLogout(){
+
+        fetch("http://localhost:3000/logout",{
+            method: "DELETE",
+        })
+        .then(data => navigate("/"))
+    }
 
   return (
     <div className='nav-div'>
@@ -21,10 +30,13 @@ const Navbar = () => {
                 About
               </NavLink>
             </li>
-            <li>
+            <li className='dog'>
               <NavLink to="/contact" activeClassName="active">
                 Contact
               </NavLink>
+            </li>
+            <li>
+                <button onClick={handleLogout}>LOGOUT</button>
             </li>
           </ul>
         </nav>) }

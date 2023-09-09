@@ -106,7 +106,7 @@ body{
 }
 
 .active {
-  background-color: #555;
+  background-color: chocolate;
   border-radius: 20px;
   padding: 50px;
 }
@@ -118,3 +118,4 @@ body{
 .pet-button{
   margin-bottom: 20px;
 }
+
