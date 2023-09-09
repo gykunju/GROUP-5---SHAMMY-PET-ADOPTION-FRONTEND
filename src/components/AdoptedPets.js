@@ -29,7 +29,7 @@ function AdoptedPets() {
                 <Card.Content>
                   <Card.Header>{pet.name}</Card.Header>
                   <Card.Meta>Age: {pet.age}</Card.Meta>
-                  <Card.Description className="pet-details">About: {pet.description}</Card.Description>
+                  <Card.Description className="pet-details">{pet.description}</Card.Description>
                 </Card.Content>
               </Card>
             ))}
