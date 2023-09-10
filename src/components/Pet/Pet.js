@@ -1,52 +1,15 @@
-// import React, { useState, useEffect } from 'react';
-// import { Card, Image } from 'semantic-ui-react';
-// import './Pet.css'
-
-// function Pet() {
-//   const [pets, setPets] = useState([]);
-
-//   useEffect(() => {
-//     fetch("") 
-//       .then((response) => response.json())
-//       .then((data) => setPets(data))
-//       .catch((error) => console.error('Error fetching pets:', error));
-//   }, []);
-
-//   return (
-//     <div>
-//       <h1>Pet List</h1>
-//       <Card.Group>
-//         {pets.map((pet) => (
-//           <Card key={pet.id}>
-//             <Image src={pet.image_url} alt={pet.name} />
-//             <Card.Content>
-//               <Card.Header>{pet.name}</Card.Header>
-//               <Card.Meta>Age: {pet.age}</Card.Meta>
-//               <Card.Description>About: {pet.about}</Card.Description>
-//             </Card.Content>
-//           </Card>
-//         ))}
-//       </Card.Group>
-//     </div>
-//   );
-// }
-
-// export default Pet;
-
-
-
-
 import React, { useState, useEffect } from 'react';
 import { Card, Image } from 'semantic-ui-react';
 import './Pet.css';
 import { useLogin } from "../UserContext";
 import { useNavigate } from "react-router-dom";
+import EditForm from './components/EditForm';
 
 
 function Pet() {
   const [pets, setPets] = useState([]);
   const { loggedInUser } = useLogin();
-
+  const [editingPet, setEditingPet] = useState(null);
   
   const navigate = useNavigate();
   
@@ -69,6 +32,14 @@ function Pet() {
   function handlePets(){
     navigate("/adoptedpets")
   }
+
+  const handleEditClick = (pet) => {
+    setEditingPet(pet);
+  };
+
+  const handleSaveEdit = (editedPet) => {
+    setEditingPet(null);
+  };
 
   function handleDelete(id){
     fetch(`http://localhost:3000/pets/${id}`,{
@@ -99,9 +70,12 @@ function Pet() {
               <Card.Description className="pet-details">About: {pet.description}</Card.Description>
               {loggedInUser?.admin && (
                 <>
-                <button>edit</button>
+               <button onClick={() => handleEditClick(pet)}>Edit</button>
                 <button onClick={() => handleDelete(pet.id)}>delete</button>
                 </>
+              )}
+                {editingPet && (
+              <EditForm pet={editingPet} onSave={handleSaveEdit} />
               )}
             </Card.Content>
           </Card>
