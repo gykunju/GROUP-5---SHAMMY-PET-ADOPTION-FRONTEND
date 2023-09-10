@@ -17,16 +17,12 @@ export default function Login() {
           body: JSON.stringify({ email, password }),
           headers: { "Content-Type": "application/json" }
         })
-        .then((res) => {if (res.ok){
-          setState("correct")
-          navigate("/pets")
-          res.json()
-        }else{
-          alert("Wrong pasword or username")
-          navigate("/")
-        }
-      })
-      .then((data) =>  login(data));
+        .then(res => res.json())
+      .then((data) => {
+        login(data)
+        setState("correct")
+        navigate("/pets")
+      });
   }
   return (
     <div className="form-div">

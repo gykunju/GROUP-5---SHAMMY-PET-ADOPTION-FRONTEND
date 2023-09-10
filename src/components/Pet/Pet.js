@@ -70,6 +70,12 @@ function Pet() {
     navigate("/adoptedpets")
   }
 
+  function handleDelete(id){
+    fetch('http://localhost:3000/pets/'+id,{
+      method: 'DELETE'
+    }).then(res => res.json())
+  }
+
   return (
     <div className="pet-container">
       <h1 className="pet-title">Pet List</h1>
@@ -77,16 +83,16 @@ function Pet() {
       {loggedInUser?.admin && <button onClick={handleCreate}>Create Pet</button>}
       <Card.Group>
         {pets.map((pet) => (         
-          <Card key={pet.id} className="pet-card" onClick={()=>handleClick(pet.id)}>
+          <Card key={pet.id} className="pet-card" >
             <Image src={pet.image} alt={pet.name} className="pet-image" />
             <Card.Content>
-              <Card.Header>{pet.name}</Card.Header>
+              <Card.Header onClick={()=>handleClick(pet.id)}>{pet.name}</Card.Header>
               <Card.Meta>Age: {pet.age}</Card.Meta>
-              <Card.Description className="pet-details"> {pet.description}</Card.Description>
+              <Card.Description className="pet-details">About: {pet.description}</Card.Description>
               {loggedInUser?.admin && (
                 <>
                 <button>edit</button>
-                <button>delete</button>
+                <button onClick={() => handleDelete(pet.id)}>delete</button>
                 </>
               )}
             </Card.Content>
