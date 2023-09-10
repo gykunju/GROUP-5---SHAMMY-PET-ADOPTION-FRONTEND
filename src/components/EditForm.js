@@ -24,6 +24,7 @@ function EditForm({ pet, onSave }) {
           onChange={handleInputChange}
         />
       </label>
+      {/* Add more input fields for other pet properties */}
       <button type="submit">Save</button>
     </form>
   );
