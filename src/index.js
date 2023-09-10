@@ -18,6 +18,7 @@ import PetCard from './components/Pet/PetCard';
 import AdoptionForm from './components/AdoptionForm';
 import AdoptedPets from './components/AdoptedPets';
 import Navbar from './components/Navbar';
+import About from './components/About';
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
@@ -33,7 +34,7 @@ root.render(
           <Route path="/pets/:id" element={<PetCard />} />
           <Route path="/pets/:id/adoption" element={<AdoptionForm />} />
           <Route path="/adoptedpets" element={<AdoptedPets />} />
-          <Route path="/adoptedpets" element={<AdoptedPets />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </BrowserRouter>
     </UserProvider>
