@@ -71,9 +71,17 @@ function Pet() {
   }
 
   function handleDelete(id){
-    fetch('http://localhost:3000/pets/'+id,{
+    fetch(`http://localhost:3000/pets/${id}`,{
       method: 'DELETE'
-    }).then(res => res.json())
+    }).then(res => {
+      if (res.ok) {
+        setPets((prevPets) => prevPets.filter((pet) => pet.id !== id));
+        alert ("pet deleted")
+      }
+      else {
+        alert ("failed")
+      }
+    })
   }
 
   return (
