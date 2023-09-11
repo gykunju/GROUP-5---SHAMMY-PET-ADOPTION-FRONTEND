@@ -59,22 +59,23 @@ body{
   border-radius: 5px;
 }
 
-.form button{
+.submit-button{
   margin-top: 20px;
   margin-bottom: 20px;
   background-color: #f8f7f7;
   border: 2px solid;
-  padding: 8px;
+  border-radius: 5px;
+  padding: 5px;
   width: 90px;
   transition: transform 0.2s;
 }
 
-.form button:hover{
+.submit-button:hover{
   transform: translateY(-2px);
   box-shadow: 2px #f8f7f7;
 }
 
-.form button:active{
+.submit-button:active{
   transform: translateX(2px) ;
 }
 
@@ -173,4 +174,71 @@ footer {
 
 footer p {
   color: white;
+}
+
+.contact-info {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.contact-info h2 {
+  color: chocolate;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info li {
+  margin-bottom: 10px;
+}
+
+.contact-info a {
+  color: chocolate;
+  text-decoration: none;
+}
+
+/* Styles for the Contact Form section */
+.contact-form {
+  background-color: white;
+  padding: 20px;
+}
+
+.contact-form h2 {
+  color: chocolate;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin-bottom: 5px;
+  color: chocolate;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid chocolate;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  background-color: chocolate;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.contact-form button:hover {
+  background-color: white;
+  color: chocolate;
 }

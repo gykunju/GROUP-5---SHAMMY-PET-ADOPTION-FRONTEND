@@ -20,6 +20,7 @@ import AdoptedPets from './components/AdoptedPets';
 import Navbar from './components/Navbar';
 import About from './components/About';
 import EditForm from './components/EditForm';
+import ContactUs from './components/ContactUs';
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
@@ -37,6 +38,7 @@ root.render(
           <Route path="/adoptedpets" element={<AdoptedPets />} />
           <Route path="/about" element={<About />} />
           <Route path="/pets/:id/create" element={<EditForm/>} />
+          <Route path="/contact_us" element={<ContactUs/>} />
         </Routes>
       </BrowserRouter>
     </UserProvider>

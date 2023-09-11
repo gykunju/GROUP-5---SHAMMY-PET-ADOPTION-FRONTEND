@@ -10,7 +10,7 @@ function PetCard() {
     fetch(`http://localhost:3000/pets/${id}`)
     .then(res => res.json())
     .then(data => setPet(data))
-  },[])
+  },[id])
 
   function handleClick(){
     navigate(`/pets/${id}/adoption`)
