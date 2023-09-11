@@ -9,8 +9,8 @@ function ContactUs() {
             <p>If you have any questions or concerns, please don't hesitate to contact us using the information below:</p>
             <ul>
                 <li>Email: <a href="mailto:info@shammypetadoption.com">info@shammypetadoption.com</a></li>
-                <li>Phone: +1 (123) 456-7890</li>
-                <li>Address: 1234 Pet Lovers Lane, City, State 12345</li>
+                <li>Phone: +2547 1456-7890</li>
+                <li>Address: Nairobi 44600, Kimathi street Pioneer building</li>
             </ul>
         </section>
     </main>
