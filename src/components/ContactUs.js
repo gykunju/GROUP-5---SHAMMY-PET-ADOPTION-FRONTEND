@@ -15,7 +15,7 @@ function ContactUs() {
         </section>
     </main>
     <footer>
-        <p>&copy; 2023 Shammy Pet Adoption App</p>
+        <p>&copy; 2023 Shammy Pet Adoption Website</p>
     </footer>
     </div>
   )
