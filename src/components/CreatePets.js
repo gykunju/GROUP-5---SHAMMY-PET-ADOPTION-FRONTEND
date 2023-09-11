@@ -1,11 +1,13 @@
 // AdminCreatePet.js
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
 function AdminCreatePet() {
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [description, setDescription] = useState('');
-  
+  const [image, setImage] = useState("")
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,7 +20,7 @@ function AdminCreatePet() {
     };
 
     // Example using fetch:
-    fetch('http://localhost:3000/api/pets', {
+    fetch('http://localhost:3000/pets', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -29,6 +31,7 @@ function AdminCreatePet() {
         if (response.ok) {
           // Handle success, e.g., show a success message and redirect
           alert('Pet created successfully');
+          navigate("/pets")
           // Redirect or perform other actions here
         } else {
           // Handle error, e.g., display an error message
@@ -42,9 +45,18 @@ function AdminCreatePet() {
   };
 
   return (
-    <div>
+    <div className="form-div">
       <h2>Create a New Pet (Admin)</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="form">
+        <label style={{marginLeft:"70px"}}>
+          Image :
+          <input
+            type="file"
+            accept='image'
+            value={image}
+            onChange={(e) => setImage(e.target.value)}
+          />
+        </label>
         <label>
           Name:
           <input
@@ -61,7 +73,7 @@ function AdminCreatePet() {
             onChange={(e) => setAge(e.target.value)}
           />
         </label>
-        <label>
+        <label style={{marginTop:"20px"}}>
           Description:
           <textarea
             value={description}

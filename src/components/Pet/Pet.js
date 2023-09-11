@@ -33,14 +33,6 @@ function Pet() {
     navigate("/adoptedpets")
   }
 
-  const handleEditClick = (pet) => {
-    setEditingPet(pet);
-  };
-
-  const handleSaveEdit = (editedPet) => {
-    setEditingPet(null);
-  };
-
   function handleDelete(id){
     fetch(`http://localhost:3000/pets/${id}`,{
       method: 'DELETE'
