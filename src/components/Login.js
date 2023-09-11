@@ -57,7 +57,7 @@ export default function Login() {
       })
       .then(() => {
         login(data)
-        alert("Signup successful. Please log in.");
+        alert("Signup successful");
         navigate("/pets");
       })
       .catch((error) => console.error(error));
