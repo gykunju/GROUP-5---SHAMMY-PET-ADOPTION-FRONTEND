@@ -1,62 +1,78 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+// AdminCreatePet.js
+import React, { useState } from 'react';
 
-function CreatePets() {
+function AdminCreatePet() {
+  const [name, setName] = useState('');
+  const [age, setAge] = useState('');
+  const [description, setDescription] = useState('');
+  
 
-    const [name, setName] = useState(0)
-    const [image, setImage] = useState(0)
-    const [age, setAge] = useState(0)
-    const [description, setDescription] = (0)
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-    const navigate = useNavigate()
+    // Create a data object with the pet information
+    const data = {
+      name,
+      age,
+      description,
+      imageUrl,
+    };
 
-    function handleSubmit(e){
-        e.preventDeault()
-
-        const data = {
-            name,
-            image,
-            age,
-            description,
-            species
+    // Example using fetch:
+    fetch('http://localhost:3000/api/pets', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => {
+        if (response.ok) {
+          // Handle success, e.g., show a success message and redirect
+          alert('Pet created successfully');
+          // Redirect or perform other actions here
+        } else {
+          // Handle error, e.g., display an error message
+          alert('Pet creation failed');
         }
-
-        fetch('http://localhost:3000/adoptions',{
-            method: 'POST',
-            headers: {
-                'Content-Type':'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-        .then(res=>{
-            if (res.ok){
-                alert("Pet created")
-                navigate('/pets')
-            }else{
-                alert("Create failed")
-            }
-        })
-    }
+      })
+      .catch((error) => {
+        // Handle network or other errors
+        console.error('Error creating pet:', error);
+      });
+  };
 
   return (
     <div>
-        <form onSubmit={handleSubmit} className='adopt-form'>
-        <label>Name :
-          <input placeholder='name' type='text'value={name} onChange={(e)=>setName(e.target.value)}/>
+      <h2>Create a New Pet (Admin)</h2>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Name:
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
         </label>
-        <label>Age :
-          <input placeholder='age' type='number' value={age} onChange={(e)=>setAge(e.target.value)}/>
+        <label>
+          Age:
+          <input
+            type="number"
+            value={age}
+            onChange={(e) => setAge(e.target.value)}
+          />
         </label>
-        <label>Image : 
-          <input placeholder='image' type="image" value={image} onChange={(e)=>setImage(e.target.value)}/>
+        <label>
+          Description:
+          <textarea
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
         </label>
-        <label>Description : 
-          <input placeholder='description' type="text" value={description} onChange={(e)=>setDescription(e.target.value)}/>
-        </label>
-        <button type='submit'>ADOPT</button>
+        <button type="submit">Create Pet</button>
       </form>
     </div>
-  )
+  );
 }
 
-export default CreatePets
+export default AdminCreatePet;

@@ -21,6 +21,7 @@ import Navbar from './components/Navbar';
 import About from './components/About';
 import EditForm from './components/EditForm';
 import ContactUs from './components/ContactUs';
+import AdminCreatePet from './components/CreatePets';
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
@@ -37,7 +38,7 @@ root.render(
           <Route path="/pets/:id/adoption" element={<AdoptionForm />} />
           <Route path="/adoptedpets" element={<AdoptedPets />} />
           <Route path="/about" element={<About />} />
-          <Route path="/pets/:id/create" element={<EditForm/>} />
+          <Route path="/create" element={<AdminCreatePet/>} />
           <Route path="/contact_us" element={<ContactUs/>} />
         </Routes>
       </BrowserRouter>

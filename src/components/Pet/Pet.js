@@ -3,7 +3,7 @@ import { Card, Image } from 'semantic-ui-react';
 import './Pet.css';
 import { useLogin } from "../UserContext";
 import { useNavigate } from "react-router-dom";
-import EditForm from '../EditForm';
+
 
 
 function Pet() {
@@ -70,13 +70,9 @@ function Pet() {
               <Card.Description className="pet-details">About: {pet.description}</Card.Description>
               {loggedInUser?.admin && (
                 <>
-               <button onClick={() => handleEditClick(pet)}>Edit</button>
                 <button onClick={() => handleDelete(pet.id)}>delete</button>
                 </>
               )}
-            {editingPet && (
-          <EditForm pet={editingPet} onSave={handleSaveEdit} />
-          )}
             </Card.Content>
           </Card>
             ))}
