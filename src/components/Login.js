@@ -55,7 +55,8 @@ export default function Login() {
           throw new Error("Signup failed");
         }
       })
-      .then(() => {
+      .then((data) => {
+        login(data)
         alert("Signup successful. Please log in.");
         navigate("/pets");
       })
