@@ -19,7 +19,6 @@ import AdoptionForm from './components/AdoptionForm';
 import AdoptedPets from './components/AdoptedPets';
 import Navbar from './components/Navbar';
 import About from './components/About';
-import EditForm from './components/EditForm';
 import ContactUs from './components/ContactUs';
 import AdminCreatePet from './components/CreatePets';
 

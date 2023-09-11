@@ -15,7 +15,6 @@ function AdminCreatePet() {
       name,
       age,
       description,
-      imageUrl,
     };
 
     // Example using fetch:
