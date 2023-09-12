@@ -13,66 +13,6 @@ function AdoptionForm() {
   const [adoptedPets, setAdoptedPets] =useState('')
   const {loggedInUser} = useLogin()
   
-
-  // function handleSubmit(e){
-  //   e.preventDefault()
-  //   const details = {
-  //      location,
-  //      contact,
-  //      reason,
-  //      pet_id: id,
-  //   }
-  //   if (location.length > 0 && contact.length > 0 && reason.length > 0 ){
-  //   fetch("http://localhost:3000/adoptions",{
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify(details)
-  //   })
-  
-
-  //   navigate('/pets')
-  // }else{
-  //   alert("Fill the Form")
-  // }
-  // }
-
-  // function handleSubmit(e) {
-  //   e.preventDefault();
-  //   const details = {
-  //     location,
-  //     contact,
-  //     reason,
-  //     pet_id: id,
-  //   };
-  
-  //   if (location.length > 0 && contact.length > 0 && reason.length > 0) {
-  //     fetch("http://localhost:3000/adoptions", {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json'
-  //       },
-  //       body: JSON.stringify(details)
-  //     })
-  //       .then(response => response.json())
-  //       .then(data => {
-  //         // Update the adoptedPets list with the newly adopted pet
-  //         setAdoptedPets([...adoptedPets, data]);
-  
-  //         // Remove the adopted pet from the local state
-  //         setAdoptedPets(prevPets => prevPets.filter(pet => pet.id !== id));
-  
-  //         navigate('/pets');
-  //       })
-  //       .catch(error => {
-  //         console.error('Error creating adoption:', error);
-  //         // Handle the error here
-  //       });
-  //   } else {
-  //     alert("Fill the Form");
-  //   }
-  // }
   
   function handleSubmit(e) {
     e.preventDefault();

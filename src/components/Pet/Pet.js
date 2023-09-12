@@ -5,21 +5,12 @@ import { useLogin } from "../UserContext";
 import { useNavigate } from "react-router-dom";
 
 
-
 function Pet() {
   const [pets, setPets] = useState([]);
   const { loggedInUser } = useLogin();
   const [editingPet, setEditingPet] = useState(null);
   
   const navigate = useNavigate();
-  
-  
-  // useEffect(() => {
-  //   fetch('http://localhost:3000/pets') 
-  //     .then((response) => response.json())
-  //     .then((data) => setPets(data))
-  //     .catch((error) => console.error('Error fetching pets:', error));
-  // },[]);
   
 
   useEffect(() => {
