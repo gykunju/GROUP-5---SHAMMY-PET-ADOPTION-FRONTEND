@@ -14,12 +14,25 @@ function Pet() {
   const navigate = useNavigate();
   
   
+  // useEffect(() => {
+  //   fetch('http://localhost:3000/pets') 
+  //     .then((response) => response.json())
+  //     .then((data) => setPets(data))
+  //     .catch((error) => console.error('Error fetching pets:', error));
+  // },[]);
+  
+
   useEffect(() => {
     fetch('http://localhost:3000/pets') 
       .then((response) => response.json())
-      .then((data) => setPets(data))
+      .then((data) => {
+        // Filter out adopted pets
+        const notAdoptedPets = data.filter((pet) => !pet.is_adopted);
+        setPets(notAdoptedPets);
+      })
       .catch((error) => console.error('Error fetching pets:', error));
-  },[]);
+  }, []);
+  
 
   function handleClick(id){
     navigate(`/pets/${id}`)
@@ -30,7 +43,7 @@ function Pet() {
   }
 
   function handlePets(){
-    navigate("/adoptedpets")
+    navigate("/adoptedPets")
   }
 
   function handleDelete(id){
