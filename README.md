@@ -57,7 +57,7 @@ src/
 - CSS and CSS Modules: For styling the user interface.
 
   ## Backend link
-  git@github.com:gykunju/SHAMMY-PET-ADOPTION.git
+  [git@github.com:gykunju/SHAMMY-PET-ADOPTION.git](https://github.com/gykunju/SHAMMY-PET-ADOPTION.git)
 
   ## Frontend deployed link
   https://shammy-pet-client.vercel.app/
